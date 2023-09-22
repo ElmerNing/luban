@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -233,7 +233,7 @@ public static class FileUtil
         {
             foreach (var file in Directory.GetFiles(fileOrDirectory, "*", SearchOption.AllDirectories))
             {
-                if (file.Substring(fileOrDirectory.Length).Split('\\', '/').Any(fileName => fileName.StartsWith(".") || fileName.StartsWith("_") || fileName.StartsWith("~")))
+                if (file.Substring(fileOrDirectory.Length).Split('\\', '/').Any(fileName => fileName.StartsWith(".") || fileName.StartsWith("~")))
                 {
                     continue;
                 }
