@@ -86,6 +86,10 @@ public class GlobalConfigLoader : IConfigLoader
             string fileOrDirectory = Path.Combine(_curDir, schemaFile.FileName);
             foreach (var subFile in FileUtil.GetFileOrDirectory(fileOrDirectory))
             {
+                if (string.IsNullOrEmpty(schemaFile.Type) && !subFile.EndsWith(".xml"))
+                {
+                    continue;
+                }
                 importFiles.Add(new SchemaFileInfo() { FileName = subFile, Type = schemaFile.Type });
             }
         }

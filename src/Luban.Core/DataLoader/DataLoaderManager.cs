@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Luban.CustomBehaviour;
 using Luban.Defs;
 using Luban.Types;
@@ -58,7 +58,7 @@ public class DataLoaderManager
         var loader = CreateDataLoader(loaderName);
         using var stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         loader.Load(file, subAssetName, stream);
-        if (IsMultiRecordFile(file, subAssetName))
+        if (IsMultiRecordFile(file, subAssetName) )
         {
             return loader.ReadMulti(table.ValueTType);
         }
